@@ -67,6 +67,20 @@ Repo checks and GitHub Actions are guardrails for this workflow kit. They do not
 - You want to separate 0-1 building from 70-100 delivery checking.
 - You want Web GPT or another model to review plans without replacing local evidence.
 
+## Beginner Tutorial
+
+If this is your first time using Codex Skills, start here:
+
+```text
+docs/BEGINNER_TUTORIAL.zh-TW.md
+```
+
+It includes beginner-friendly diagrams for:
+
+- choosing the right Skill
+- installing the Skills
+- checking evidence instead of only asking for a score
+
 ## What Is Inside
 
 ```text

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.8
+
+- Added a Traditional Chinese beginner tutorial for first-time Codex Skills users.
+- Added four tutorial SVG images covering the overview, skill selection, install steps, and evidence loop.
+- Added a README entry point for the beginner tutorial.
+
 ## 0.1.7
 
 - Hardened release packaging to skip symlinks.

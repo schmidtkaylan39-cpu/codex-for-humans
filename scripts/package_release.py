@@ -130,6 +130,11 @@ def verify(output: Path) -> None:
     required = {
         "README.md",
         "SECURITY.md",
+        "docs/BEGINNER_TUTORIAL.zh-TW.md",
+        "docs/assets/tutorial-card.svg",
+        "docs/assets/tutorial-decision-map.svg",
+        "docs/assets/tutorial-install-steps.svg",
+        "docs/assets/tutorial-proof-loop.svg",
         "skills/nontechnical-codex-project-controller/SKILL.md",
         "skills/nontechnical-codex-project-controller/agents/openai.yaml",
         "skills/nontechnical-project-readiness-auditor/SKILL.md",
