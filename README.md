@@ -4,6 +4,31 @@
 
 Codex for Humans is a beginner-friendly workflow kit for people who want to use Codex to build software projects without reading code. It turns vague ideas into structured tasks, evidence-based checks, safer review loops, and plain-language delivery notes.
 
+## 10-Second Map
+
+```mermaid
+flowchart LR
+    A["I have an idea or task"] --> B{"What stage is it?"}
+    B -->|Start / build / fix| C["Use Project Controller<br/>0-1 execution"]
+    B -->|Mostly done| D["Use Readiness Auditor<br/>70-100 audit"]
+    C --> E["Codex works locally<br/>files, tests, evidence"]
+    D --> F["Find blockers<br/>untested items, risks, closeout tasks"]
+    F -->|Need fixes| C
+    E --> G{"High risk or final review?"}
+    G -->|Yes| H["Send bounded packet<br/>to Web GPT"]
+    H --> I["Import candidate opinion<br/>back to Codex"]
+    I --> E
+    G -->|No| J["Plain-language delivery<br/>and acceptance script"]
+```
+
+Simple rule:
+
+```text
+0-1: build with $nontechnical-codex-project-controller
+70-100: audit with $nontechnical-project-readiness-auditor
+Web GPT: outside review only, never local proof
+```
+
 ## Who This Is For
 
 - You do not read code, but you want to build software with Codex.
@@ -16,13 +41,13 @@ Codex for Humans is a beginner-friendly workflow kit for people who want to use 
 
 ```text
 codex-for-humans/
-├─ skills/
-│  ├─ nontechnical-codex-project-controller/
-│  └─ nontechnical-project-readiness-auditor/
-├─ prompts/
-├─ templates/
-├─ docs/
-└─ examples/
++-- skills/
+|   +-- nontechnical-codex-project-controller/
+|   +-- nontechnical-project-readiness-auditor/
++-- prompts/
++-- templates/
++-- docs/
++-- examples/
 ```
 
 ## The Two Core Skills
@@ -68,6 +93,10 @@ Best for:
 
 ## Quick Start
 
+Visual install guide:
+
+![Install flow](docs/assets/install-flow.svg)
+
 1. Copy both folders in `skills/` into your Codex skills folder.
 
 Windows:
@@ -96,6 +125,18 @@ For a nearly finished project, use:
 
 ```text
 prompts/02-audit-70-to-100-project.md
+```
+
+For a real beginner walkthrough, read:
+
+```text
+examples/clinic-booking-system.zh-TW.md
+```
+
+For a visual install guide, read:
+
+```text
+docs/INSTALL_VISUAL.zh-TW.md
 ```
 
 ## Simple Operating Rule
@@ -158,4 +199,3 @@ Beginner-friendly Codex skills and prompts for nontechnical owners to plan, buil
 ## License
 
 MIT. See `LICENSE`.
-

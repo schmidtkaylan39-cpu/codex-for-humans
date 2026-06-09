@@ -2,6 +2,16 @@
 
 這份 repo 目前提供兩個 Codex Skill。安裝方式是把 `skills/` 下面的資料夾放進你的 Codex skills 資料夾。
 
+## 圖片版
+
+![Install flow](assets/install-flow.svg)
+
+更完整的圖片式教學請看：
+
+```text
+docs/INSTALL_VISUAL.zh-TW.md
+```
+
 ## Windows
 
 在 `codex-for-humans` 資料夾內執行：
@@ -50,4 +60,3 @@ cp -R ./skills/* ~/.codex/skills/
 - cookie
 - 私人專案 logs
 - 交易所、Discord、雲端服務憑證
-

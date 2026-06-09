@@ -1,5 +1,13 @@
 # Examples
 
+## Full Beginner Walkthrough
+
+Traditional Chinese:
+
+```text
+examples/clinic-booking-system.zh-TW.md
+```
+
 ## Example 1: New Project
 
 Use:
@@ -59,4 +67,3 @@ Paste the Web result back into Codex with:
 ```text
 prompts/04-import-web-review-to-codex.md
 ```
-
