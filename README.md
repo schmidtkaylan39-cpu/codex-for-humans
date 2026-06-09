@@ -2,6 +2,8 @@
 
 小白也能用的 Codex 專案總控 Skills。
 
+![Codex for Humans hero](docs/assets/tutorial-card-image2.png)
+
 Codex for Humans is an unofficial workflow kit for nontechnical owners who want to use Codex to build software projects without reading code.
 
 It is not a single magic prompt. It is a small system of Codex Skills, prompts, and templates that helps you:

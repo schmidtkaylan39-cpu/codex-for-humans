@@ -8,11 +8,11 @@
 2. 什麼時候讓 Codex 檢查能不能交付。
 3. 什麼時候要停下來要求證據。
 
-![Codex for Humans 教學封面](assets/tutorial-card.svg)
+![Codex for Humans 教學封面](assets/tutorial-card-image2.png)
 
 ## 先看一張圖
 
-![0-1 與 70-100 分流圖](assets/tutorial-decision-map.svg)
+![0-1 與 70-100 分流圖](assets/tutorial-decision-map-image2.png)
 
 最簡單的判斷方式：
 
@@ -47,7 +47,7 @@ https://github.com/schmidtkaylan39-cpu/codex-for-humans/releases/latest
 
 ## 第二步：安裝兩個 Skill
 
-![安裝步驟圖](assets/tutorial-install-steps.svg)
+![安裝步驟圖](assets/tutorial-install-steps-image2.png)
 
 先找到你的 Codex Skills 資料夾。
 
@@ -150,7 +150,7 @@ prompts/05-quick-daily-task.md
 
 ## 第四步：不要只看分數
 
-![證據迴圈圖](assets/tutorial-proof-loop.svg)
+![證據迴圈圖](assets/tutorial-proof-loop-image2.png)
 
 新手最容易問：
 

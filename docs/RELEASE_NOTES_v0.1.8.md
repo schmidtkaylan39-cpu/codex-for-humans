@@ -2,6 +2,8 @@
 
 This release adds beginner-facing teaching materials for public sharing.
 
+Note: v0.1.9 replaces these first SVG tutorial visuals with polished Image 2 PNG visuals.
+
 ## What Changed
 
 - Added `docs/BEGINNER_TUTORIAL.zh-TW.md`, a complete Traditional Chinese tutorial for first-time users.

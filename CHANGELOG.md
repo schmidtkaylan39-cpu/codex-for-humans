@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.9
+
+- Replaced the first tutorial SVG visuals with Image 2 PNG visuals.
+- Added correct Traditional Chinese text overlays to the instructional PNGs.
+- Updated the beginner tutorial to reference the new polished image assets.
+
 ## 0.1.8
 
 - Added a Traditional Chinese beginner tutorial for first-time Codex Skills users.
