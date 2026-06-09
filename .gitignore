@@ -1,0 +1,44 @@
+# Secrets and local credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*secret*
+*secrets*
+*token*
+*credential*
+*credentials*
+
+# Codex local state and private workspace data
+.codex/
+.agents/
+attachments/
+sessions/
+logs/
+output/
+reports/private/
+
+# Dependencies and generated files
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.turbo/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+

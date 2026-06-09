@@ -1,0 +1,6 @@
+interface:
+  display_name: "Nontechnical Project Readiness Auditor"
+  short_description: "Delivery readiness audits for nontechnical owners"
+  default_prompt: "Use $nontechnical-project-readiness-auditor to audit this 70-100 stage project for delivery readiness, blockers, risks, and minimal closeout tasks."
+policy:
+  allow_implicit_invocation: true
