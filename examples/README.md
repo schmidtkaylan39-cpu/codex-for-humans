@@ -14,6 +14,12 @@ English:
 examples/clinic-booking-system.en.md
 ```
 
+Readiness audit micro case:
+
+```text
+examples/readiness-audit-micro-case.zh-TW.md
+```
+
 ## Example 1: New Project
 
 Use:

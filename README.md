@@ -56,6 +56,8 @@ Before using this workflow with production systems, real user data, payments, tr
 
 Web GPT review is only an outside opinion. It is not local test evidence, not approval, and not proof that the project is safe to ship.
 
+Repo checks and GitHub Actions are guardrails for this workflow kit. They do not prove that your own software project is secure, legal, deployable, or production-ready.
+
 ## Who This Is For
 
 - You do not read code, but you want to build software with Codex.
@@ -144,6 +146,8 @@ If one path does not work, use the Skills directory shown by your Codex app or C
 2. Install the two Skill folders.
 
 New users should prefer one-click install:
+
+Only run these scripts from a repo you trust. If unsure, use dry-run first and confirm the target path.
 
 Windows:
 

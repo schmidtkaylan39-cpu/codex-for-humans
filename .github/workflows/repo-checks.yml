@@ -53,6 +53,11 @@ jobs:
           test -f /tmp/codex-for-humans-skills/nontechnical-codex-project-controller/SKILL.md
           test -f /tmp/codex-for-humans-skills/nontechnical-project-readiness-auditor/SKILL.md
 
+      - name: Validate PowerShell install dry-run
+        shell: pwsh
+        run: |
+          ./scripts/install.ps1 -DryRun -TargetPath /tmp/codex-for-humans-pwsh-skills
+
       - name: Validate release zip packaging
         run: |
           python scripts/package_release.py --root . --output /tmp/codex-for-humans-check.zip
@@ -62,6 +67,37 @@ jobs:
               names = z.namelist()
           if any("\\" in name for name in names):
               raise SystemExit("Release zip contains backslash path separators")
+          PY
+
+      - name: Validate release packaging excludes local private files
+        run: |
+          mkdir -p .codex/sessions .agents/skills logs output reports/private
+          echo "DUMMY=example" > .env
+          echo "private" > .codex/sessions/session.txt
+          echo "private" > .agents/skills/private.txt
+          echo "private" > logs/run.log
+          echo "private" > output/debug.txt
+          echo "private" > reports/private/report.txt
+          echo "archive" > old.zip
+          python scripts/package_release.py --root . --output /tmp/codex-for-humans-dirty-check.zip
+          python - <<'PY'
+          import zipfile
+
+          forbidden = {
+              ".env",
+              ".codex/sessions/session.txt",
+              ".agents/skills/private.txt",
+              "logs/run.log",
+              "output/debug.txt",
+              "reports/private/report.txt",
+              "old.zip",
+              "codex-for-humans-dirty-check.zip",
+          }
+          with zipfile.ZipFile("/tmp/codex-for-humans-dirty-check.zip") as z:
+              names = set(z.namelist())
+          bad = sorted(forbidden & names)
+          if bad:
+              raise SystemExit(f"Release zip included forbidden files: {bad}")
           PY
 
       - name: Check public wording boundaries

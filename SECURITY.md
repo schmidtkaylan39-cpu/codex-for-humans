@@ -2,6 +2,8 @@
 
 Codex for Humans is an unofficial workflow kit. It helps structure Codex work, but it does not guarantee that generated software is secure, legal, deployable, or safe for production.
 
+Repo checks and GitHub Actions are guardrails for this workflow kit. They do not prove that your own software project is secure, legal, deployable, or production-ready.
+
 ## Do Not Share Secrets
 
 Never paste or commit:

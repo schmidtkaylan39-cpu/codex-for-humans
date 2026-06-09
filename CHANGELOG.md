@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5
+
+- Hardened release packaging to exclude local private and ignored files.
+- Added dirty packaging tests to GitHub Actions.
+- Added PowerShell install dry-run CI check.
+- Added README and SECURITY wording that repo checks are guardrails, not production safety proof.
+- Added a Traditional Chinese readiness-audit micro case.
+
 ## 0.1.4
 
 - Added dry-run support to both install scripts.
