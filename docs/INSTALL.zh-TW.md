@@ -27,22 +27,54 @@ docs/ONE_CLICK_INSTALL.zh-TW.md
 
 ## Windows
 
-在 `codex-for-humans` 資料夾內執行：
+建議新手優先使用一鍵安裝：
 
 ```powershell
-Copy-Item -Recurse -Force .\skills\* "$env:USERPROFILE\.codex\skills\"
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
+```
+
+如果你要手動安裝，請只選一個 Codex 實際使用的 Skills 目錄。
+
+範例 A：使用 `.agents\skills`
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.agents\skills"
 Copy-Item -Recurse -Force .\skills\* "$env:USERPROFILE\.agents\skills\"
+```
+
+範例 B：使用 `.codex\skills`
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
+Copy-Item -Recurse -Force .\skills\* "$env:USERPROFILE\.codex\skills\"
 ```
 
 請選擇你電腦上存在、且 Codex 實際使用的路徑。不需要兩個都複製。
 
 ## macOS / Linux
 
-在 `codex-for-humans` 資料夾內執行：
+建議新手優先使用一鍵安裝：
 
 ```bash
-cp -R ./skills/* ~/.codex/skills/
+bash ./scripts/install.sh --dry-run
+bash ./scripts/install.sh
+```
+
+如果你要手動安裝，請只選一個 Codex 實際使用的 Skills 目錄。
+
+範例 A：使用 `.agents/skills`
+
+```bash
+mkdir -p ~/.agents/skills
 cp -R ./skills/* ~/.agents/skills/
+```
+
+範例 B：使用 `.codex/skills`
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R ./skills/* ~/.codex/skills/
 ```
 
 請選擇你電腦上存在、且 Codex 實際使用的路徑。不需要兩個都複製。

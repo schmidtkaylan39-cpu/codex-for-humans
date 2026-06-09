@@ -18,6 +18,14 @@ scripts/install.sh
 
 在 repo 資料夾中執行：
 
+先看會安裝到哪裡，但不實際複製：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun
+```
+
+確認路徑正確後再安裝：
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
 ```
@@ -32,6 +40,14 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -TargetPath "$env
 
 在 repo 資料夾中執行：
 
+先看會安裝到哪裡，但不實際複製：
+
+```bash
+bash ./scripts/install.sh --dry-run
+```
+
+確認路徑正確後再安裝：
+
 ```bash
 bash ./scripts/install.sh
 ```
@@ -39,7 +55,7 @@ bash ./scripts/install.sh
 如果你知道自己的 Codex Skills 目錄，也可以指定：
 
 ```bash
-bash ./scripts/install.sh ~/.agents/skills
+bash ./scripts/install.sh --target ~/.agents/skills
 ```
 
 ## 安裝後驗證
@@ -52,4 +68,3 @@ bash ./scripts/install.sh ~/.agents/skills
 可嘗試使用 `/skills` 或輸入 `$` 查看可用 Skills。
 
 如果看不到，請回到 `docs/INSTALL.zh-TW.md` 檢查路徑。
-

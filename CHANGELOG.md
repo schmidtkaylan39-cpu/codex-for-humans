@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4
+
+- Added dry-run support to both install scripts.
+- Hardened PowerShell repeated install behavior.
+- Added `scripts/package_release.py` for cross-platform release zips.
+- Updated install docs to prefer one-click install and one selected Skills path.
+- Added secret exposure incident response guidance to `SECURITY.md`.
+- Expanded GitHub Actions checks for install scripts, Skill frontmatter, and release zip packaging.
+
 ## 0.1.3
 
 - Added Quick / Full / High-Risk operating modes to the project controller Skill.

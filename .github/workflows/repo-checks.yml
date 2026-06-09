@@ -23,6 +23,46 @@ jobs:
           test -f prompts/05-quick-daily-task.md
           test -f prompts/06-full-project-task.md
           test -f prompts/07-high-risk-task.md
+          test -f scripts/package_release.py
+
+      - name: Validate skill frontmatter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          for path in Path("skills").glob("*/SKILL.md"):
+              text = path.read_text(encoding="utf-8")
+              if not text.startswith("---\n"):
+                  raise SystemExit(f"{path} missing YAML frontmatter")
+              end = text.find("\n---", 4)
+              if end == -1:
+                  raise SystemExit(f"{path} missing frontmatter end")
+              frontmatter = text[4:end]
+              name_line = f"name: {path.parent.name}"
+              if name_line not in frontmatter:
+                  raise SystemExit(f"{path} name must match folder: {name_line}")
+              if "description:" not in frontmatter:
+                  raise SystemExit(f"{path} missing description")
+          PY
+
+      - name: Validate install scripts
+        run: |
+          bash -n scripts/install.sh
+          bash scripts/install.sh --dry-run --target /tmp/codex-for-humans-skills
+          bash scripts/install.sh --target /tmp/codex-for-humans-skills
+          test -f /tmp/codex-for-humans-skills/nontechnical-codex-project-controller/SKILL.md
+          test -f /tmp/codex-for-humans-skills/nontechnical-project-readiness-auditor/SKILL.md
+
+      - name: Validate release zip packaging
+        run: |
+          python scripts/package_release.py --root . --output /tmp/codex-for-humans-check.zip
+          python - <<'PY'
+          import zipfile
+          with zipfile.ZipFile("/tmp/codex-for-humans-check.zip") as z:
+              names = z.namelist()
+          if any("\\" in name for name in names):
+              raise SystemExit("Release zip contains backslash path separators")
+          PY
 
       - name: Check public wording boundaries
         run: |

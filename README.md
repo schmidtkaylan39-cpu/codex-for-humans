@@ -141,23 +141,41 @@ Common paths may include:
 
 If one path does not work, use the Skills directory shown by your Codex app or CLI.
 
-2. Copy both folders in `skills/` into your Codex Skills folder.
+2. Install the two Skill folders.
+
+New users should prefer one-click install:
 
 Windows:
 
 ```powershell
-Copy-Item -Recurse -Force .\skills\* "$env:USERPROFILE\.codex\skills\"
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -DryRun
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
+```
+
+macOS / Linux:
+
+```bash
+bash ./scripts/install.sh --dry-run
+bash ./scripts/install.sh
+```
+
+Manual install is also possible, but choose only one Skills path.
+
+Windows:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.agents\skills"
 Copy-Item -Recurse -Force .\skills\* "$env:USERPROFILE\.agents\skills\"
 ```
 
 macOS / Linux:
 
 ```bash
-cp -R ./skills/* ~/.codex/skills/
+mkdir -p ~/.agents/skills
 cp -R ./skills/* ~/.agents/skills/
 ```
 
-Use the command for the path that exists on your machine. You do not need to use both.
+If your Codex shows `.codex/skills` instead, use that path instead. Do not blindly install to both paths.
 
 3. Restart Codex and verify the Skills are visible.
 

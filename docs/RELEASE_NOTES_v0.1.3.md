@@ -31,3 +31,7 @@ Near-delivery projects: Readiness Auditor.
 
 Do not repeat the full SOP every round.
 
+## v0.1.4 Follow-Up
+
+Install and release packaging hardening moved to `v0.1.4`.
+

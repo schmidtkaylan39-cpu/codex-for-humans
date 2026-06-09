@@ -27,6 +27,19 @@ Before using Codex for Humans with production systems, real user data, payments,
 - keep least-privilege access
 - ask a qualified human reviewer for legal, financial, medical, security, or compliance risk
 
+## If You Accidentally Expose A Secret
+
+If you accidentally commit, paste, upload, or share a secret:
+
+1. Stop using that secret immediately.
+2. Revoke or rotate it in the original service.
+3. Remove it from files, logs, prompts, screenshots, and review packets.
+4. If it was committed to Git, clean Git history before making the repo public.
+5. Do not paste the exposed secret into an issue, chat, Web GPT packet, support request, or public discussion.
+6. Treat screenshots and logs as sensitive until you confirm the secret is gone.
+
+Deleting the visible text is not enough if the secret was already committed, uploaded, or shared. Rotate or revoke first.
+
 ## Web GPT Review
 
 Web GPT or another outside model can help find missed risks and missing tests.
@@ -38,4 +51,3 @@ It is not local evidence, not approval, and not proof that a project is safe to 
 If you find a security issue in this repo's public docs, prompts, or Skills, open a GitHub issue without posting secrets.
 
 If your issue includes private information, remove the private content first and describe the problem in general terms.
-
