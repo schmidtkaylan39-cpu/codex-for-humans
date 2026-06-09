@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.7
+
+- Hardened release packaging to skip symlinks.
+- Added a resolved-path guard so package inputs must remain inside the repository root.
+- Added GitHub Actions coverage for symlink packaging exclusion.
+- Replaced hard-coded local Windows paths in the GitHub upload guide with generic beginner-safe paths.
+
 ## 0.1.6
 
 - Hardened release packaging to exclude sensitive-looking path components, not only filenames.

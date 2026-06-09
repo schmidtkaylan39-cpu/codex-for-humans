@@ -14,7 +14,7 @@ codex-for-humans
 ```
 
 3. Visibility 先選 Private。
-4. 上傳 `C:\Users\Administrator\codex-for-humans` 內的檔案。
+4. 上傳 `<你的 codex-for-humans repo 資料夾>` 內的檔案。
 5. 檢查沒有敏感資料。
 6. 再切換成 Public。
 
@@ -23,7 +23,7 @@ codex-for-humans
 適合電腦已經登入 GitHub CLI 的人。
 
 ```powershell
-cd C:\Users\Administrator\codex-for-humans
+cd path\to\codex-for-humans
 git status
 git add .
 git commit -m "Initial Codex for Humans release"
@@ -34,5 +34,4 @@ gh repo create codex-for-humans --private --source . --remote origin --push
 
 ## 不建議
 
-不要直接把整個 `C:\Users\Administrator\.codex` 上傳。
-
+不要直接把整個 `.codex` 資料夾上傳。

@@ -90,6 +90,9 @@ jobs:
           echo "private" > .npmrc
           echo "private" > .pypirc
           echo "private" > .netrc
+          echo "private" > id_ed25519
+          echo "outside dummy" > /tmp/outside-private.txt
+          ln -s /tmp/outside-private.txt normal-link.txt
           python scripts/package_release.py --root . --output /tmp/codex-for-humans-dirty-check.zip
           python - <<'PY'
           import zipfile
@@ -113,6 +116,8 @@ jobs:
               ".npmrc",
               ".pypirc",
               ".netrc",
+              "id_ed25519",
+              "normal-link.txt",
               "codex-for-humans-dirty-check.zip",
           }
           with zipfile.ZipFile("/tmp/codex-for-humans-dirty-check.zip") as z:

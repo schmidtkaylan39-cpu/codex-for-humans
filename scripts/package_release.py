@@ -75,10 +75,19 @@ def matches_exclude_pattern(value: str) -> bool:
 
 
 def should_include(path: Path, root: Path, output: Path) -> bool:
+    if path.is_symlink():
+        return False
+
     if not path.is_file():
         return False
 
-    if path.resolve() == output.resolve():
+    resolved_path = path.resolve()
+    if resolved_path == output.resolve():
+        return False
+
+    try:
+        resolved_path.relative_to(root)
+    except ValueError:
         return False
 
     relative = path.relative_to(root)
@@ -152,6 +161,7 @@ def verify(output: Path) -> None:
         ".pypirc",
         ".netrc",
         "id_ed25519",
+        "normal-link.txt",
     }
 
     with zipfile.ZipFile(output) as archive:
