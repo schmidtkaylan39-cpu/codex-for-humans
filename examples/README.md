@@ -8,6 +8,12 @@ Traditional Chinese:
 examples/clinic-booking-system.zh-TW.md
 ```
 
+English:
+
+```text
+examples/clinic-booking-system.en.md
+```
+
 ## Example 1: New Project
 
 Use:

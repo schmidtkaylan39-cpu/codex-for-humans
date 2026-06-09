@@ -124,6 +124,10 @@ Visual install guide:
 
 ![Install flow](docs/assets/install-flow.svg)
 
+GIF install demo:
+
+![Install demo](docs/assets/install-demo.gif)
+
 1. Find your Codex Skills folder.
 
 Codex Skills 的安裝路徑可能因 Codex 版本或環境不同而不同。
@@ -189,12 +193,25 @@ For a real beginner walkthrough, read:
 
 ```text
 examples/clinic-booking-system.zh-TW.md
+examples/clinic-booking-system.en.md
 ```
 
 For a visual install guide, read:
 
 ```text
 docs/INSTALL_VISUAL.zh-TW.md
+```
+
+For one-click install, read:
+
+```text
+docs/ONE_CLICK_INSTALL.zh-TW.md
+```
+
+For the GIF install guide, read:
+
+```text
+docs/INSTALL_GIF.zh-TW.md
 ```
 
 For your first 10 minutes, read:

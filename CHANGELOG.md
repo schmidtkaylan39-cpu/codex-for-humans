@@ -8,6 +8,9 @@
 - Added a README Safety First section and recommended project setup.
 - Added `SECURITY.md` and a first-10-minutes beginner guide.
 - Added lightweight GitHub repo checks for public-readiness guardrails.
+- Added one-click install scripts for Windows and macOS/Linux.
+- Added an English clinic booking system walkthrough.
+- Added an animated GIF install demo and public Web GPT review prompt.
 
 ## 0.1.1
 

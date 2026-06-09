@@ -17,17 +17,19 @@ jobs:
           test -f skills/nontechnical-codex-project-controller/agents/openai.yaml
           test -f skills/nontechnical-project-readiness-auditor/SKILL.md
           test -f skills/nontechnical-project-readiness-auditor/agents/openai.yaml
+          test -f scripts/install.ps1
+          test -f scripts/install.sh
+          test -f examples/clinic-booking-system.en.md
 
       - name: Check public wording boundaries
         run: |
-          ! grep -R "codex-web-gpt-broker" -n README.md docs prompts skills templates examples SECURITY.md
-          ! grep -R "下一步指令" -n README.md docs prompts skills templates examples SECURITY.md
+          ! grep -R --exclude='*.gif' "codex-web-gpt-broker" -n README.md docs prompts skills templates examples SECURITY.md scripts
+          ! grep -R --exclude='*.gif' "下一步指令" -n README.md docs prompts skills templates examples SECURITY.md scripts
 
       - name: Check common mojibake markers
         run: |
-          ! grep -R "鈹\|灏\|绺\|锛\|鍊\|闋\|瑭\|銆\|�" -n README.md docs prompts skills templates examples SECURITY.md
+          ! grep -R --exclude='*.gif' "鈹\|灏\|绺\|锛\|鍊\|闋\|瑭\|銆\|�" -n README.md docs prompts skills templates examples SECURITY.md scripts
 
       - name: Check common secret-shaped patterns
         run: |
-          ! grep -RE "sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|DSA|EC|PRIVATE) KEY" README.md docs prompts skills templates examples SECURITY.md
-
+          ! grep -R --exclude='*.gif' -E "sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|DSA|EC|PRIVATE) KEY" README.md docs prompts skills templates examples SECURITY.md scripts

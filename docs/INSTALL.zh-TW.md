@@ -21,6 +21,8 @@ Codex Skills 的安裝路徑可能因 Codex 版本或環境不同而不同。
 
 ```text
 docs/INSTALL_VISUAL.zh-TW.md
+docs/INSTALL_GIF.zh-TW.md
+docs/ONE_CLICK_INSTALL.zh-TW.md
 ```
 
 ## Windows
