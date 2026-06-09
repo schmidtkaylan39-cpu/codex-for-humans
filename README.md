@@ -183,6 +183,24 @@ For a brand-new project, use:
 prompts/01-start-new-project.md
 ```
 
+For daily small tasks, use:
+
+```text
+prompts/05-quick-daily-task.md
+```
+
+For medium or large tasks, use:
+
+```text
+prompts/06-full-project-task.md
+```
+
+For high-risk tasks, use:
+
+```text
+prompts/07-high-risk-task.md
+```
+
 For a nearly finished project, use:
 
 ```text
@@ -225,11 +243,27 @@ docs/FIRST_10_MINUTES.zh-TW.md
 Use this split:
 
 ```text
+Small low-risk task: Quick Mode with $nontechnical-codex-project-controller
 0-1: build with $nontechnical-codex-project-controller
 70-100: audit with $nontechnical-project-readiness-auditor
+High-risk: stop first with High-Risk Mode
 ```
 
 If the audit finds work that must be fixed, hand that task back to the project controller.
+
+## Do Not Use The Full Workflow For Everything
+
+Codex for Humans is meant to prevent rework and risk, not to make every tiny task heavy.
+
+Use the lightest safe mode:
+
+- Quick Mode: small low-risk tasks, copy edits, tiny UI changes, simple docs updates, single clear bugs
+- Full Mode: new features, multi-file changes, product flows, long-running debugging, meaningful integrations
+- High-Risk Mode: API keys, payments, deployment, auth, real data, CMS publishing, outreach email, paid tools, deletion, permissions, or irreversible actions
+
+Small tasks only need short classification, focused action, and acceptance.
+Medium, large, and high-risk tasks need stronger contracts and evidence.
+Do not paste or repeat the full SOP every round.
 
 ## Recommended Project Setup
 

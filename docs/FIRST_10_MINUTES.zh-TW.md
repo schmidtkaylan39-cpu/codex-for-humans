@@ -6,7 +6,13 @@
 
 ## 第 1 分鐘：選對 Skill
 
-如果你要從 0 開始做，或要讓 Codex 修 bug、加功能、跑測試：
+如果你要做小任務、改文案、小 bug、文件微調：
+
+```text
+prompts/05-quick-daily-task.md
+```
+
+如果你要從 0 開始做，或要讓 Codex 修比較大的 bug、加功能、跑測試：
 
 ```text
 $nontechnical-codex-project-controller
@@ -24,6 +30,18 @@ $nontechnical-project-readiness-auditor
 
 ```text
 prompts/01-start-new-project.md
+```
+
+中大型任務：
+
+```text
+prompts/06-full-project-task.md
+```
+
+高風險任務：
+
+```text
+prompts/07-high-risk-task.md
 ```
 
 快完成要檢查：
@@ -44,6 +62,8 @@ prompts/02-audit-70-to-100-project.md
 - 高風險停止點
 
 如果 Codex 一開始就大改很多檔案，你可以要求它先補「任務合約」。
+
+如果只是小任務，請不要要求完整任務合約。小任務只需要短分類、最小修改、簡短驗收。
 
 ## 第 7-8 分鐘：不要用分數代替證據
 
@@ -86,4 +106,3 @@ Web GPT 可以幫你找風險和漏測。
 ```text
 先用假資料和本機測試，證據夠了再談正式上線。
 ```
-

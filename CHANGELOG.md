@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3
+
+- Added Quick / Full / High-Risk operating modes to the project controller Skill.
+- Added prompt presets for daily small tasks, full tasks, and high-risk tasks.
+- Updated the 0-100 router prompt to select modes more efficiently.
+- Updated README and the first-10-minutes guide with "do not use the full workflow for everything" guidance.
+- Added v0.1.3 release notes.
+
 ## 0.1.2
 
 - Made Skill install paths safer for different Codex environments.

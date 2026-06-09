@@ -20,6 +20,9 @@ jobs:
           test -f scripts/install.ps1
           test -f scripts/install.sh
           test -f examples/clinic-booking-system.en.md
+          test -f prompts/05-quick-daily-task.md
+          test -f prompts/06-full-project-task.md
+          test -f prompts/07-high-risk-task.md
 
       - name: Check public wording boundaries
         run: |

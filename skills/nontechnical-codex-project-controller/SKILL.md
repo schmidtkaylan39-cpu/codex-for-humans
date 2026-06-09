@@ -23,12 +23,67 @@ Web GPT review is not approval, not acceptance, and not proof that local tests p
 
 Classify every task before acting.
 
-- Small task: copy, minor UI tweak, single clear bug, or single-file low-risk change. Codex may execute directly after a short goal summary.
-- Medium task: new feature, multiple files, user-flow change, or nontrivial debugging. Codex must create a small task contract and evidence summary.
-- Large task: new product, multi-module work, multi-day work, broad architecture, SaaS, AI platform, finance, trading, deployment, user data, or payments. Codex must freeze a task contract, work in verified rounds, keep handoff, and use Web GPT only at major review points.
-- High-risk task: anything involving payments, trades, deployment, permissions, auth, real user data, sensitive data, secrets, paid APIs, bulk messages, security settings, database migrations, deletion, external service wiring, or irreversible operations.
+- Small task: copy, minor UI tweak, single clear bug, or single-file low-risk change. Use Quick Mode.
+- Medium task: new feature, multiple files, user-flow change, or nontrivial debugging. Use Full Mode with a small task contract and evidence summary.
+- Large task: new product, multi-module work, multi-day work, broad architecture, SaaS, AI platform, finance, trading, deployment, user data, or payments. Use Full Mode with a frozen task contract, verified rounds, handoff, and Web GPT only at major review points.
+- High-risk task: anything involving payments, trades, deployment, permissions, auth, real user data, sensitive data, secrets, paid APIs, bulk messages, security settings, database migrations, deletion, external service wiring, or irreversible operations. Use High-Risk Mode.
 
 High-risk small tasks do not use the small-task flow.
+
+## Operating Modes
+
+Choose the lightest safe mode. Do not repeat the full SOP every round.
+
+### Quick Mode
+
+Use for small, low-risk tasks such as copy edits, minor UI text changes, small styling changes, single clear bugs, or tiny docs updates.
+
+Quick Mode must include only:
+
+- one-line task classification
+- intended change
+- edit or action
+- focused verification
+- short result and remaining risk
+
+Quick Mode does not require a full task contract unless ambiguity, risk, or scope grows.
+
+### Full Mode
+
+Use for medium or large tasks such as new features, multi-file changes, product flows, nontrivial debugging, integrations, or long-running work.
+
+Full Mode requires:
+
+- current-state inventory
+- task contract
+- success criteria
+- verification plan
+- scoped implementation
+- evidence-based completion
+- handoff
+
+### High-Risk Mode
+
+Use whenever the task touches real money, real trades, production, real user data, permissions, auth, secrets, paid APIs, external services, CMS publishing, outreach email, bulk messages, deletion, migrations, deployment, or irreversible operations.
+
+High-Risk Mode requires:
+
+- stop before execution
+- environment and data classification
+- explicit human approval
+- sandbox, fake data, dry run, or local simulation first when feasible
+- rollback or recovery plan
+- evidence log
+
+High-Risk Mode overrides Quick Mode and Full Mode.
+
+Mode rule:
+
+```text
+Small low-risk tasks: Quick Mode.
+Medium and large tasks: Full Mode.
+Any high-risk task: High-Risk Mode.
+```
 
 ## Source Of Truth
 
@@ -69,7 +124,7 @@ Never store secrets in these files.
 
 ## Task Contract Template
 
-For medium, large, or high-risk tasks, freeze a contract before broad work:
+For medium, large, or high-risk tasks, freeze a contract before broad work. Small low-risk Quick Mode tasks do not need the full contract unless ambiguity, risk, or scope grows.
 
 ```text
 Task Contract
@@ -324,6 +379,9 @@ Do not patch symptoms repeatedly.
 ## Token Control
 
 - Do not paste the full SOP every round.
+- Use Quick Mode for small low-risk tasks.
+- Use Full Mode only when the task size or ambiguity justifies the full contract.
+- Use High-Risk Mode only when risk boundaries are involved.
 - Do not send full source code or full chat history to Web GPT.
 - Send summaries, evidence locations, and specific review questions.
 - Store long-term decisions in files, not chat memory.
