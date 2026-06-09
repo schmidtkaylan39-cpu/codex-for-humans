@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.6
+
+- Hardened release packaging to exclude sensitive-looking path components, not only filenames.
+- Added packaging exclusions for common private folders and files such as `.ssh/`, `.aws/`, `.npmrc`, `.pypirc`, `.netrc`, `id_rsa`, and `id_ed25519`.
+- Expanded dirty packaging tests with private, secrets, credentials, and SSH-style dummy files.
+- Added a README reminder that readiness scores are summaries, not delivery approval.
+
 ## 0.1.5
 
 - Hardened release packaging to exclude local private and ignored files.

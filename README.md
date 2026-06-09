@@ -41,6 +41,7 @@ Web GPT: outside review only, never local proof
 Codex executes locally.
 Web GPT only gives candidate review.
 Tests, builds, local evidence, and human approval decide whether something is actually ready.
+Readiness score is only a summary. Blockers and evidence decide delivery.
 
 ## Safety First
 

@@ -71,7 +71,7 @@ jobs:
 
       - name: Validate release packaging excludes local private files
         run: |
-          mkdir -p .codex/sessions .agents/skills logs output reports/private
+          mkdir -p .codex/sessions .agents/skills logs output reports/private secrets private credentials_folder .ssh .aws .azure .gcloud .config/private-app
           echo "DUMMY=example" > .env
           echo "private" > .codex/sessions/session.txt
           echo "private" > .agents/skills/private.txt
@@ -79,6 +79,17 @@ jobs:
           echo "private" > output/debug.txt
           echo "private" > reports/private/report.txt
           echo "archive" > old.zip
+          echo "private" > secrets/data.txt
+          echo "private" > private/data.txt
+          echo "private" > credentials_folder/data.txt
+          echo "private" > .ssh/id_rsa
+          echo "private" > .aws/config
+          echo "private" > .azure/config.json
+          echo "private" > .gcloud/config.json
+          echo "private" > .config/private-app/config.json
+          echo "private" > .npmrc
+          echo "private" > .pypirc
+          echo "private" > .netrc
           python scripts/package_release.py --root . --output /tmp/codex-for-humans-dirty-check.zip
           python - <<'PY'
           import zipfile
@@ -91,6 +102,17 @@ jobs:
               "output/debug.txt",
               "reports/private/report.txt",
               "old.zip",
+              "secrets/data.txt",
+              "private/data.txt",
+              "credentials_folder/data.txt",
+              ".ssh/id_rsa",
+              ".aws/config",
+              ".azure/config.json",
+              ".gcloud/config.json",
+              ".config/private-app/config.json",
+              ".npmrc",
+              ".pypirc",
+              ".netrc",
               "codex-for-humans-dirty-check.zip",
           }
           with zipfile.ZipFile("/tmp/codex-for-humans-dirty-check.zip") as z:

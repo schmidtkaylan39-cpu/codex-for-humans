@@ -8,13 +8,22 @@ EXCLUDE_DIRS = {
     ".git",
     ".codex",
     ".agents",
+    ".aws",
+    ".azure",
     ".cache",
+    ".config",
+    ".gcloud",
+    ".ssh",
     ".turbo",
     ".vscode",
     ".idea",
     "__pycache__",
     "attachments",
+    "credentials",
     "sessions",
+    "secret",
+    "secrets",
+    "private",
     "logs",
     "output",
     "node_modules",
@@ -37,11 +46,18 @@ EXCLUDE_SUFFIXES = {
 EXCLUDE_NAMES = {
     ".DS_Store",
     ".env",
+    ".netrc",
+    ".npmrc",
+    ".pypirc",
     "Thumbs.db",
     "desktop.ini",
+    "id_ed25519",
+    "id_rsa",
 }
+EXCLUDE_NAMES_LOWER = {name.lower() for name in EXCLUDE_NAMES}
 EXCLUDE_PATTERNS = {
     ".env.*",
+    "*private*",
     "*secret*",
     "*secrets*",
     "*token*",
@@ -53,6 +69,11 @@ EXCLUDE_PATH_PREFIXES = {
 }
 
 
+def matches_exclude_pattern(value: str) -> bool:
+    lower_value = value.lower()
+    return any(fnmatch.fnmatch(lower_value, pattern.lower()) for pattern in EXCLUDE_PATTERNS)
+
+
 def should_include(path: Path, root: Path, output: Path) -> bool:
     if not path.is_file():
         return False
@@ -62,21 +83,19 @@ def should_include(path: Path, root: Path, output: Path) -> bool:
 
     relative = path.relative_to(root)
     relative_posix = relative.as_posix()
-    parts = set(relative.parts)
+    parts = {part.lower() for part in relative.parts}
 
     if parts & EXCLUDE_DIRS:
         return False
 
-    if path.suffix in EXCLUDE_SUFFIXES:
+    if path.suffix.lower() in EXCLUDE_SUFFIXES:
         return False
 
-    if path.name in EXCLUDE_NAMES:
+    if path.name.lower() in EXCLUDE_NAMES_LOWER:
         return False
 
-    lower_name = path.name.lower()
-    for pattern in EXCLUDE_PATTERNS:
-        if fnmatch.fnmatch(lower_name, pattern.lower()):
-            return False
+    if any(matches_exclude_pattern(part) for part in relative.parts):
+        return False
 
     for prefix in EXCLUDE_PATH_PREFIXES:
         if relative_posix == prefix or relative_posix.startswith(prefix + "/"):
@@ -114,12 +133,25 @@ def verify(output: Path) -> None:
     }
     forbidden_names = {
         ".env",
+        ".env.local",
         ".codex/sessions/session.txt",
         ".agents/skills/private.txt",
         "logs/run.log",
         "output/debug.txt",
         "reports/private/report.txt",
         "old.zip",
+        "secrets/data.txt",
+        "private/data.txt",
+        "credentials_folder/data.txt",
+        ".ssh/id_rsa",
+        ".aws/config",
+        ".azure/config.json",
+        ".gcloud/config.json",
+        ".config/private-app/config.json",
+        ".npmrc",
+        ".pypirc",
+        ".netrc",
+        "id_ed25519",
     }
 
     with zipfile.ZipFile(output) as archive:
