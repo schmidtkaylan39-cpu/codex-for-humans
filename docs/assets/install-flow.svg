@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1360" height="360" viewBox="0 0 1360 360" role="img" aria-labelledby="title desc">
   <title id="title">Codex for Humans install flow</title>
-  <desc id="desc">Four-step visual guide: download the repo, copy skills, open Codex, use the right prompt.</desc>
+  <desc id="desc">Four-step visual guide: download the repo, copy skills into the Codex Skills folder, open Codex, use the right prompt.</desc>
   <rect width="1360" height="360" fill="#f7f7f2"/>
   <style>
     .card { fill: #ffffff; stroke: #222222; stroke-width: 2; }
@@ -34,7 +34,7 @@
   <text class="num" x="418" y="107">2</text>
   <text class="title" x="462" y="103">Copy Skills</text>
   <text class="body" x="418" y="155">Copy both folders</text>
-  <text class="body" x="418" y="184">into .codex/skills.</text>
+  <text class="body" x="418" y="184">to Codex Skills.</text>
   <rect class="accent" x="418" y="218" width="180" height="18" rx="5"/>
   <text class="small" x="418" y="262">No secrets, no logs.</text>
 

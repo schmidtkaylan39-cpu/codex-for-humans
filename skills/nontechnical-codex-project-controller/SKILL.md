@@ -14,7 +14,7 @@ Codex is the only executor. Web GPT is an outside reviewer whose output is only 
 ## Role Boundaries
 
 - Codex: inspect local files, plan, edit, test, debug, review, write reports, and produce nontechnical delivery summaries.
-- Web GPT: review ambiguity, logic gaps, missed tests, risk, and overengineering only. Use `codex-web-gpt-broker` when moving review packets to or from Web GPT.
+- Web GPT: review ambiguity, logic gaps, missed tests, risk, and overengineering only. Use this repo's Web GPT review packet prompts when moving review packets to or from Web GPT.
 - Human: approve task contracts, high-risk actions, production changes, real money, real trades, real user data, irreversible actions, and business acceptance.
 
 Web GPT review is not approval, not acceptance, and not proof that local tests passed.
