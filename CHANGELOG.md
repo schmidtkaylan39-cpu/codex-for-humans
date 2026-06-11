@@ -1,8 +1,16 @@
 # Changelog
 
+## 0.1.12
+
+- Hardened model cost routing language after external review.
+- Removed auto-sounding wording and replaced it with manual cost-tier recommendation wording.
+- Added explicit "no automatic switching, no guaranteed savings" limits.
+- Added budget cap, pricing-known, manual-switch, and external-data fields to routing templates.
+- Clarified that human approval is a gate, not a model tier, and that cheap cloud models are not the same as local models.
+
 ## 0.1.11
 
-- Added semi-automatic model cost routing guidance for choosing cheap/local, standard Codex, premium reviewer, or human approval tiers.
+- Added manual model cost-tier recommendation guidance for choosing cheap/local, standard Codex, premium reviewer, or human approval gates.
 - Added `prompts/09-model-cost-routing.md` for requesting a cost-safe model routing decision.
 - Added `templates/MODEL_ROUTING_LOG.md` and `docs/MODEL_COST_ROUTING.zh-TW.md`.
 - Updated both core Skills to record routing decisions without claiming automatic provider switching.

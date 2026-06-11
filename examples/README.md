@@ -97,6 +97,6 @@ I want to know whether this should stay in Codex, be drafted by a cheaper/local 
 Expected Codex behavior:
 
 - classify the task size and risk
-- recommend the cheapest safe tier
+- recommend the safest cost tier
 - keep local execution and proof inside Codex
 - require human approval before paid tools, production, secrets, money, or irreversible actions

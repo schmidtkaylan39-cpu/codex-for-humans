@@ -101,9 +101,11 @@ Do not silently move from "ready" to "not ready", from "not ready" to "ready", o
 
 ## Review Cost Routing Rule
 
-Use the cheapest safe review tier, but never let cost override delivery evidence.
+Use the safest cost-tier recommendation, but never let cost override delivery evidence.
 
 Codex must not claim it can automatically switch model providers, paid plans, accounts, or external tools unless the current environment exposes that ability and the human approved it. In ordinary Codex use, Codex only recommends the review tier and records why.
+
+Codex must not claim actual cost savings unless verified billing or usage data proves it. If budget, pricing, data sensitivity, execution environment, provider, account permission, or paid approval is unknown, default to the safer tier or human approval.
 
 Default routing:
 
@@ -111,6 +113,10 @@ Default routing:
 - Standard Codex: local read-only audit, evidence classification, test/build review, high-risk inventory, and closeout task definition.
 - Premium reviewer: formal delivery review, high-risk project, major uncertainty, security/legal/finance/trading/auth/deployment concerns, severe blocker, or repeated disagreement.
 - Human approval required: production release, real data, real money, real trades, secret handling, external paid tool spend, or account/provider switching.
+
+Human approval is a gate, not a model replacement. A high-risk delivery audit may still need Standard Codex for local evidence, Premium reviewer for candidate review, and human approval before release.
+
+Cheap is not the same as local. If a cheap model is an external cloud model, treat it as external review. Do not send proprietary code, real user data, secrets, production logs, payment or trading details, account identifiers, or sensitive project content to an external cheap model unless the packet is redacted or synthetic and the human approved it.
 
 Cheap / local / mini review cannot create A-level evidence and cannot mark a project deliverable. Premium review is still only candidate opinion until Codex verifies locally.
 
@@ -121,6 +127,10 @@ Review Routing
 - Audit stage:
 - Suggested tier:
 - Why this tier:
+- Budget cap / spend limit:
+- Pricing known or unknown:
+- Manual model/account switch required:
+- External data allowed: none / redacted / synthetic / approved
 - What can be checked cheaply:
 - Upgrade trigger:
 - Web GPT or other reviewer needed:

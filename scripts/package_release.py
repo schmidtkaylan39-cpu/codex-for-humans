@@ -150,6 +150,8 @@ def verify(output: Path) -> None:
         "templates/MODEL_ROUTING_LOG.md",
         "docs/MODEL_COST_ROUTING.zh-TW.md",
         "docs/WEB_GPT_55_PRO_REVIEW_PROMPT_v0.1.11.zh-TW.md",
+        "docs/WEB_GPT_55_PRO_REVIEW_PROMPT_v0.1.12.zh-TW.md",
+        "docs/RELEASE_NOTES_v0.1.12.md",
         "docs/SOPLINT_LESSONS.zh-TW.md",
     }
     forbidden_names = {

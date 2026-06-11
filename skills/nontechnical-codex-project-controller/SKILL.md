@@ -1,6 +1,6 @@
 ---
 name: nontechnical-codex-project-controller
-description: Use when a nontechnical owner wants Codex to plan, build, debug, review, or deliver software projects without reading code. Coordinates Codex-first execution, optional Web GPT candidate review, semi-automatic model cost routing, task contracts, evidence-based completion, high-risk approval gates, nontechnical acceptance scripts, and long-run handoff.
+description: Use when a nontechnical owner wants Codex to plan, build, debug, review, or deliver software projects without reading code. Coordinates Codex-first execution, optional Web GPT candidate review, manual model cost-tier recommendation, task contracts, evidence-based completion, high-risk approval gates, nontechnical acceptance scripts, and long-run handoff.
 ---
 
 # Nontechnical Codex Project Controller
@@ -91,12 +91,18 @@ Use this rule to reduce wasted premium-model time without weakening proof.
 
 Codex must not claim it can automatically switch model providers, paid plans, accounts, or external tools unless the current environment exposes that ability and the human approved it. In ordinary Codex use, Codex only recommends the safest cost tier and records why.
 
+Codex must not claim actual cost savings unless verified billing or usage data proves it. If budget, pricing, data sensitivity, execution environment, provider, account permission, or paid approval is unknown, default to the safer tier or human approval.
+
 Before medium, large, long-running, high-risk, or externally reviewed work, classify the suggested model tier:
 
 - Cheap / local / mini: summaries, copy drafts, simple read-only checks, typo scans, formatting ideas, low-risk brainstorming, or candidate lists.
 - Standard Codex: implementation, debugging, tests, repo inspection, multi-file edits, integration work, and evidence collection.
 - Premium reviewer: architecture review, final delivery review, high-risk review, severe ambiguity, repeated failures, security, legal, finance, trading, auth, deployment, or major release readiness.
 - Human approval required: real money, real trades, production changes, secrets, paid API spend, external account actions, irreversible actions, or provider/account switching.
+
+Human approval is a gate, not a model replacement. A high-risk task may need Standard Codex for local proof, Premium reviewer for candidate review, and human approval before any real operation.
+
+Cheap is not the same as local. If a cheap model is an external cloud model, treat it as external review. Do not send proprietary code, real user data, secrets, production logs, payment or trading details, account identifiers, or sensitive project content to an external cheap model unless the packet is redacted or synthetic and the human approved it.
 
 Never use cheap / local / mini as final authority for high-risk decisions, completion proof, security conclusions, legal/financial judgment, production deployment, real trades, real payments, or secret handling. Cheap / local / mini output can be a draft or candidate opinion only.
 
@@ -107,6 +113,10 @@ Model Routing
 - Task class:
 - Suggested tier:
 - Why this tier:
+- Budget cap / spend limit:
+- Pricing known or unknown:
+- Manual model/account switch required:
+- External data allowed: none / redacted / synthetic / approved
 - What can be delegated cheaply:
 - Upgrade trigger:
 - External review needed:

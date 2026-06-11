@@ -22,14 +22,14 @@ Chat history and outside model opinions are not proof.
 
 ## Model Cost Routing
 
-Use the cheapest safe model tier:
+Use the safest cost tier recommendation:
 
 - Cheap / local / mini for drafts, summaries, wording, and low-risk read-only checks.
 - Standard Codex for local execution, file edits, tests, debugging, and proof.
 - Premium reviewer for high-risk review, final review, severe ambiguity, or repeated failures.
 - Human approval for money, trades, production, secrets, paid tools, external account actions, or irreversible actions.
 
-Do not claim automatic provider switching unless the environment supports it and the owner approved it.
+Do not claim automatic provider switching unless the environment supports it and the owner approved it. Do not claim guaranteed cost savings unless verified billing data proves it.
 
 ## High-Risk Stop Points
 

@@ -39,7 +39,7 @@ Simple rule:
 ```text
 0-1: build with $nontechnical-codex-project-controller
 70-100: audit with $nontechnical-project-readiness-auditor
-Model routing: choose the cheapest safe tier, but never cheap-route high-risk proof
+Model routing: recommend the safest cost tier, but never cheap-route high-risk proof
 Web GPT: outside review only, never local proof
 ```
 
@@ -275,7 +275,7 @@ When Codex changes its mind or changes a score, use:
 prompts/08-belief-revision-check.md
 ```
 
-When you want Codex to choose the cheapest safe model tier, use:
+When you want Codex to recommend the safest cost tier, use:
 
 ```text
 prompts/09-model-cost-routing.md
