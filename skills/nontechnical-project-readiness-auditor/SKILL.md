@@ -1,6 +1,6 @@
 ---
 name: nontechnical-project-readiness-auditor
-description: Use when a nontechnical owner asks for delivery readiness, current project score, 70-100 project audit, pre-release check, untested-item review, high-risk gap list, Web GPT final review packet, nontechnical acceptance script, or minimal closeout task list. Do not use for 0-1 planning, new feature implementation, active bug fixing, refactors, architecture changes, deployments, or production execution; hand those to nontechnical-codex-project-controller.
+description: Use when a nontechnical owner asks for delivery readiness, current project score, 70-100 project audit, pre-release check, untested-item review, high-risk gap list, model cost routing for review, Web GPT final review packet, nontechnical acceptance script, or minimal closeout task list. Do not use for 0-1 planning, new feature implementation, active bug fixing, refactors, architecture changes, deployments, or production execution; hand those to nontechnical-codex-project-controller.
 ---
 
 # Nontechnical Project Readiness Auditor
@@ -99,6 +99,34 @@ Readiness Revision
 
 Do not silently move from "ready" to "not ready", from "not ready" to "ready", or from one score range to another. A changed judgment must carry evidence.
 
+## Review Cost Routing Rule
+
+Use the cheapest safe review tier, but never let cost override delivery evidence.
+
+Codex must not claim it can automatically switch model providers, paid plans, accounts, or external tools unless the current environment exposes that ability and the human approved it. In ordinary Codex use, Codex only recommends the review tier and records why.
+
+Default routing:
+
+- Cheap / local / mini: typo scan, wording polish, broad checklist brainstorming, duplicate-risk scan, or low-risk documentation review.
+- Standard Codex: local read-only audit, evidence classification, test/build review, high-risk inventory, and closeout task definition.
+- Premium reviewer: formal delivery review, high-risk project, major uncertainty, security/legal/finance/trading/auth/deployment concerns, severe blocker, or repeated disagreement.
+- Human approval required: production release, real data, real money, real trades, secret handling, external paid tool spend, or account/provider switching.
+
+Cheap / local / mini review cannot create A-level evidence and cannot mark a project deliverable. Premium review is still only candidate opinion until Codex verifies locally.
+
+Use this short shape when model cost matters:
+
+```text
+Review Routing
+- Audit stage:
+- Suggested tier:
+- Why this tier:
+- What can be checked cheaply:
+- Upgrade trigger:
+- Web GPT or other reviewer needed:
+- Human approval needed:
+```
+
 ## Delivery Blockers
 
 If any of the following are true, do not mark the project as deliverable:
@@ -184,6 +212,7 @@ Web GPT Review Packet
 - Project background:
 - Current readiness goal:
 - Out of scope:
+- Review routing decision:
 - Codex current findings:
 - Evidence levels:
 - Untested items:

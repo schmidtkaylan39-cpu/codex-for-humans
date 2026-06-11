@@ -20,6 +20,17 @@ Chat history and outside model opinions are not proof.
 4. Run the closest useful verification.
 5. Report evidence, untested items, and next step.
 
+## Model Cost Routing
+
+Use the cheapest safe model tier:
+
+- Cheap / local / mini for drafts, summaries, wording, and low-risk read-only checks.
+- Standard Codex for local execution, file edits, tests, debugging, and proof.
+- Premium reviewer for high-risk review, final review, severe ambiguity, or repeated failures.
+- Human approval for money, trades, production, secrets, paid tools, external account actions, or irreversible actions.
+
+Do not claim automatic provider switching unless the environment supports it and the owner approved it.
+
 ## High-Risk Stop Points
 
 Stop for explicit owner approval before:
@@ -44,4 +55,3 @@ End meaningful work with:
 - Next:
 - Key paths/artifacts:
 ```
-

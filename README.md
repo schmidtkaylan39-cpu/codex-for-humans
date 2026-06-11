@@ -13,13 +13,15 @@ It is not a single magic prompt. It is a small system of Codex Skills, prompts, 
 - separate building from delivery readiness auditing
 - require evidence before calling work "done"
 - use Web GPT as an outside reviewer without treating it as local proof
+- recommend a cost-aware model tier without pretending to auto-switch providers
 - avoid high-risk actions such as real payments, real trades, production deployment, real user data, secrets, and irreversible changes without explicit approval
 
 ## 10-Second Map
 
 ```mermaid
 flowchart LR
-    A["I have an idea or task"] --> B{"What stage is it?"}
+    A["I have an idea or task"] --> K["Model cost routing<br/>cheap / Codex / premium"]
+    K --> B{"What stage is it?"}
     B -->|Start / build / fix| C["Use Project Controller<br/>0-1 execution"]
     B -->|Mostly done| D["Use Readiness Auditor<br/>70-100 audit"]
     C --> E["Codex works locally<br/>files, tests, evidence"]
@@ -37,6 +39,7 @@ Simple rule:
 ```text
 0-1: build with $nontechnical-codex-project-controller
 70-100: audit with $nontechnical-project-readiness-auditor
+Model routing: choose the cheapest safe tier, but never cheap-route high-risk proof
 Web GPT: outside review only, never local proof
 ```
 
@@ -60,6 +63,8 @@ Before using this workflow with production systems, real user data, payments, tr
 Web GPT review is only an outside opinion. It is not local test evidence, not approval, and not proof that the project is safe to ship.
 
 Repo checks and GitHub Actions are guardrails for this workflow kit. They do not prove that your own software project is secure, legal, deployable, or production-ready.
+
+Model cost routing is guidance only. This repo does not automatically switch providers, buy tokens, use paid APIs, or move work to another model. Any real provider switch, paid usage, production action, or account connection still needs explicit approval.
 
 ## Who This Is For
 
@@ -94,6 +99,18 @@ templates/BELIEF_REVISIONS.jsonl.example
 ```
 
 Use it when Codex changes its mind, changes a score, or discovers that an earlier completion claim was wrong.
+
+## Model Cost Routing Add-on
+
+This repo also includes a lightweight model-routing rule:
+
+```text
+docs/MODEL_COST_ROUTING.zh-TW.md
+prompts/09-model-cost-routing.md
+templates/MODEL_ROUTING_LOG.md
+```
+
+Use it when you want Codex to decide whether a task should stay in normal Codex, be drafted by a cheaper/local model, or be escalated to Web GPT Pro / another premium reviewer. The rule is conservative: high-risk proof, delivery approval, secrets, trading, payments, deployment, and production work must not be delegated to cheap models as final authority.
 
 ## What Is Inside
 
@@ -258,6 +275,12 @@ When Codex changes its mind or changes a score, use:
 prompts/08-belief-revision-check.md
 ```
 
+When you want Codex to choose the cheapest safe model tier, use:
+
+```text
+prompts/09-model-cost-routing.md
+```
+
 For a nearly finished project, use:
 
 ```text
@@ -303,6 +326,7 @@ Use this split:
 Small low-risk task: Quick Mode with $nontechnical-codex-project-controller
 0-1: build with $nontechnical-codex-project-controller
 70-100: audit with $nontechnical-project-readiness-auditor
+Model cost: cheap/local for drafts, Codex for execution, premium for high-risk review
 High-risk: stop first with High-Risk Mode
 ```
 

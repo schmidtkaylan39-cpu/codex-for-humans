@@ -36,3 +36,8 @@ List how Codex should prove the project works.
 Money, trading, production, permissions, data, external APIs, secrets, deployment.
 ```
 
+## Model Cost Routing
+
+```text
+Write which tasks can use cheap/local drafting, which tasks need Codex execution, and which tasks need premium review or human approval.
+```

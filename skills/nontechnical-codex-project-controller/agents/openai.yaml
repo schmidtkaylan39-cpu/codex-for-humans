@@ -1,6 +1,6 @@
 interface:
   display_name: "Nontechnical Codex Project Controller"
-  short_description: "Codex-first project control for nontechnical owners"
-  default_prompt: "Use $nontechnical-codex-project-controller to plan, execute, verify, and deliver this software task for a nontechnical owner."
+  short_description: "Codex-first project control with cost-aware routing"
+  default_prompt: "Use $nontechnical-codex-project-controller to classify model cost tier, plan, execute, verify, and deliver this software task for a nontechnical owner."
 policy:
   allow_implicit_invocation: true

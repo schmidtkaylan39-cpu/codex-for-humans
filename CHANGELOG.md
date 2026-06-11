@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.11
+
+- Added semi-automatic model cost routing guidance for choosing cheap/local, standard Codex, premium reviewer, or human approval tiers.
+- Added `prompts/09-model-cost-routing.md` for requesting a cost-safe model routing decision.
+- Added `templates/MODEL_ROUTING_LOG.md` and `docs/MODEL_COST_ROUTING.zh-TW.md`.
+- Updated both core Skills to record routing decisions without claiming automatic provider switching.
+- Added a v0.1.11 Web GPT-5.5 Pro review prompt.
+
 ## 0.1.10
 
 - Added soplint-inspired belief revision discipline without making soplint a required dependency.

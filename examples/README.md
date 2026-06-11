@@ -79,3 +79,24 @@ Paste the Web result back into Codex with:
 ```text
 prompts/04-import-web-review-to-codex.md
 ```
+
+## Example 4: Model Cost Routing
+
+Use:
+
+```text
+prompts/09-model-cost-routing.md
+```
+
+Then describe the task:
+
+```text
+I want to know whether this should stay in Codex, be drafted by a cheaper/local model, or be sent to Web GPT Pro for final review.
+```
+
+Expected Codex behavior:
+
+- classify the task size and risk
+- recommend the cheapest safe tier
+- keep local execution and proof inside Codex
+- require human approval before paid tools, production, secrets, money, or irreversible actions

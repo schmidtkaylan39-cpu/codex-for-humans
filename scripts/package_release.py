@@ -145,7 +145,11 @@ def verify(output: Path) -> None:
         "prompts/06-full-project-task.md",
         "prompts/07-high-risk-task.md",
         "prompts/08-belief-revision-check.md",
+        "prompts/09-model-cost-routing.md",
         "templates/BELIEF_REVISIONS.jsonl.example",
+        "templates/MODEL_ROUTING_LOG.md",
+        "docs/MODEL_COST_ROUTING.zh-TW.md",
+        "docs/WEB_GPT_55_PRO_REVIEW_PROMPT_v0.1.11.zh-TW.md",
         "docs/SOPLINT_LESSONS.zh-TW.md",
     }
     forbidden_names = {

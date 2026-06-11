@@ -1,6 +1,6 @@
 ---
 name: nontechnical-codex-project-controller
-description: Use when a nontechnical owner wants Codex to plan, build, debug, review, or deliver software projects without reading code. Coordinates Codex-first execution, optional Web GPT candidate review, task contracts, evidence-based completion, high-risk approval gates, nontechnical acceptance scripts, and long-run handoff.
+description: Use when a nontechnical owner wants Codex to plan, build, debug, review, or deliver software projects without reading code. Coordinates Codex-first execution, optional Web GPT candidate review, semi-automatic model cost routing, task contracts, evidence-based completion, high-risk approval gates, nontechnical acceptance scripts, and long-run handoff.
 ---
 
 # Nontechnical Codex Project Controller
@@ -85,6 +85,36 @@ Medium and large tasks: Full Mode.
 Any high-risk task: High-Risk Mode.
 ```
 
+## Model Cost Routing Rule
+
+Use this rule to reduce wasted premium-model time without weakening proof.
+
+Codex must not claim it can automatically switch model providers, paid plans, accounts, or external tools unless the current environment exposes that ability and the human approved it. In ordinary Codex use, Codex only recommends the safest cost tier and records why.
+
+Before medium, large, long-running, high-risk, or externally reviewed work, classify the suggested model tier:
+
+- Cheap / local / mini: summaries, copy drafts, simple read-only checks, typo scans, formatting ideas, low-risk brainstorming, or candidate lists.
+- Standard Codex: implementation, debugging, tests, repo inspection, multi-file edits, integration work, and evidence collection.
+- Premium reviewer: architecture review, final delivery review, high-risk review, severe ambiguity, repeated failures, security, legal, finance, trading, auth, deployment, or major release readiness.
+- Human approval required: real money, real trades, production changes, secrets, paid API spend, external account actions, irreversible actions, or provider/account switching.
+
+Never use cheap / local / mini as final authority for high-risk decisions, completion proof, security conclusions, legal/financial judgment, production deployment, real trades, real payments, or secret handling. Cheap / local / mini output can be a draft or candidate opinion only.
+
+For small low-risk Quick Mode tasks, skip the full routing note unless the user asks about cost or models. For larger or risky work, use this short shape:
+
+```text
+Model Routing
+- Task class:
+- Suggested tier:
+- Why this tier:
+- What can be delegated cheaply:
+- Upgrade trigger:
+- External review needed:
+- Human approval needed:
+```
+
+If the project has `MODEL_ROUTING_LOG.md`, `EVIDENCE_LEDGER.md`, or another local cost/routing artifact, update it when useful. Never include secrets, account identifiers, tokens, cookies, passwords, private keys, or sensitive user data.
+
 ## Source Of Truth
 
 Separate sources by purpose.
@@ -144,6 +174,7 @@ Skill rules are generic. Project-specific rules belong in local files:
 - `DECISION_LOG.md`: why choices were made, including rejected Web GPT suggestions.
 - `EVIDENCE_LEDGER.md`: what was done, what was changed, how it was verified, remaining risk, and next step.
 - `BELIEF_REVISIONS.jsonl` or another revision log: when Codex changed its mind and why.
+- `MODEL_ROUTING_LOG.md`: which model tier was recommended, why, and when to upgrade.
 - `RISK_REGISTER.md`: project-specific high-risk zones.
 - `RELEASE_CHECKLIST.md`: release or production readiness checks.
 
@@ -367,6 +398,7 @@ Web GPT Review Packet
 - Project background:
 - Task contract:
 - Out of scope:
+- Model routing decision:
 - Codex change summary:
 - Changed file list:
 - Verification commands and results:
