@@ -144,6 +144,9 @@ def verify(output: Path) -> None:
         "prompts/05-quick-daily-task.md",
         "prompts/06-full-project-task.md",
         "prompts/07-high-risk-task.md",
+        "prompts/08-belief-revision-check.md",
+        "templates/BELIEF_REVISIONS.jsonl.example",
+        "docs/SOPLINT_LESSONS.zh-TW.md",
     }
     forbidden_names = {
         ".env",

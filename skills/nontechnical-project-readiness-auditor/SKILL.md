@@ -82,6 +82,23 @@ The score is an audit summary, not delivery approval.
 
 Do not let a high score hide blockers. Explain score limits. If blockers exist, the readiness verdict must reflect the blocker even if the numeric score seems high.
 
+## Score Revision Rule
+
+If the current score, verdict, or delivery status changes after reading local evidence, tests, CI, Web GPT candidate review, or user correction, explain the change explicitly.
+
+Use this short shape:
+
+```text
+Readiness Revision
+- Previous score or verdict:
+- New score or verdict:
+- Trigger:
+- Evidence:
+- Delivery impact:
+```
+
+Do not silently move from "ready" to "not ready", from "not ready" to "ready", or from one score range to another. A changed judgment must carry evidence.
+
 ## Delivery Blockers
 
 If any of the following are true, do not mark the project as deliverable:

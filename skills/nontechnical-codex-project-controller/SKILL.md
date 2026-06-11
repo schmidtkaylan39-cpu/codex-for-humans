@@ -110,6 +110,32 @@ Opinion sources:
 
 If completion evidence conflicts with a verbal claim, trust the evidence. If a frozen task contract conflicts with later casual chat, treat the casual request as a change request.
 
+## Belief Revision Rule
+
+When Codex changes a previous working belief, assumption, plan, score, risk judgment, or completion claim, it must leave a visible revision note.
+
+Use this rule when:
+
+- user feedback disproves a Codex assumption
+- a test result contradicts the plan
+- local files show the earlier understanding was wrong
+- Web GPT or another reviewer finds a missed requirement
+- a risk level, delivery score, or completion status changes
+- Codex previously said something was done, then finds it was not
+
+Use this short shape in the final reply or local evidence artifact:
+
+```text
+Belief Revision
+- Previous belief:
+- New belief:
+- Trigger:
+- Evidence:
+- Impact on next step:
+```
+
+If the project has `BELIEF_REVISIONS.jsonl`, `EVIDENCE_LEDGER.md`, or another local revision artifact, append or update it when safe. Never include secrets, account identifiers, tokens, cookies, passwords, private keys, or sensitive user data.
+
 ## Project Files
 
 Skill rules are generic. Project-specific rules belong in local files:
@@ -117,6 +143,7 @@ Skill rules are generic. Project-specific rules belong in local files:
 - `AGENTS.md` or `PROJECT_RULES.md`: project goal, stack, commands, environments, high-risk areas, and local conventions.
 - `DECISION_LOG.md`: why choices were made, including rejected Web GPT suggestions.
 - `EVIDENCE_LEDGER.md`: what was done, what was changed, how it was verified, remaining risk, and next step.
+- `BELIEF_REVISIONS.jsonl` or another revision log: when Codex changed its mind and why.
 - `RISK_REGISTER.md`: project-specific high-risk zones.
 - `RELEASE_CHECKLIST.md`: release or production readiness checks.
 

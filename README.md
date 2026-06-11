@@ -83,6 +83,18 @@ It includes beginner-friendly diagrams for:
 - installing the Skills
 - checking evidence instead of only asking for a score
 
+## Agent Discipline Add-on
+
+This repo now includes a lightweight belief-revision rule inspired by `soplint`:
+
+```text
+docs/SOPLINT_LESSONS.zh-TW.md
+prompts/08-belief-revision-check.md
+templates/BELIEF_REVISIONS.jsonl.example
+```
+
+Use it when Codex changes its mind, changes a score, or discovers that an earlier completion claim was wrong.
+
 ## What Is Inside
 
 ```text
@@ -238,6 +250,12 @@ For high-risk tasks, use:
 
 ```text
 prompts/07-high-risk-task.md
+```
+
+When Codex changes its mind or changes a score, use:
+
+```text
+prompts/08-belief-revision-check.md
 ```
 
 For a nearly finished project, use:

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.10
+
+- Added soplint-inspired belief revision discipline without making soplint a required dependency.
+- Added `prompts/08-belief-revision-check.md` for checking when Codex changed its mind.
+- Added `templates/BELIEF_REVISIONS.jsonl.example`.
+- Updated both core Skills with Belief Revision / Readiness Revision rules.
+- Added `docs/SOPLINT_LESSONS.zh-TW.md` explaining what was adopted and why direct installation is optional.
+
 ## 0.1.9
 
 - Replaced the first tutorial SVG visuals with Image 2 PNG visuals.
